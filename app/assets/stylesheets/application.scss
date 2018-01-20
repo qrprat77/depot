@@ -45,6 +45,7 @@ header.main {
   }
   
   nav {
+    position: relative;
     padding-bottom: 1em;
     background: #141;
     text-align: center; //Mobile has centered nav
@@ -64,8 +65,7 @@ header.main {
         padding: 0.5em;
         text-transform: uppercase;
         letter-spacing: 0.354em;
-        color: #bfb;
-        text-decoration: none;
+
         a {
             color: #bfb;
             text-decoration: none;
@@ -74,6 +74,12 @@ header.main {
           background: none;
           color: white;
         }
+      }
+      time {
+         position: absolute;
+         bottom: 0;
+         color: white;
+         text-decoration: none;
       }
     }
   }
