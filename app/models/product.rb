@@ -7,14 +7,14 @@ class Product < ApplicationRecord
     with: %r{\.(gif|jpg|png)\Z}i,
     message: 'must be a URL for GIF, JPG, or PNG image.'
   }
-  before_destory :ensure_not_referenced_by_any_line_item
+  before_destroy :ensure_not_referenced_by_any_line_item
   
   private
   
     # ensure that there are no line items referencing this product
     def ensure_not_referenced_by_any_line_item
       unless line_items.empty?
-        error.add(:base, 'Line Items present')
+        errors.add(:base, 'Line Items present')
         throw :abort
       end
     end
